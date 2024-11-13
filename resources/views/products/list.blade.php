@@ -8,7 +8,10 @@
 @endif
 
 <a href="{{ route('products.create') }}" class="create-button">Create Product</a>
-
+<form action="{{ route('logout') }}" method="POST" style="display:inline;">
+    @csrf
+    <button type="submit" class="logout-button">Logout</button>
+</form>
 <table class="product-table">
     <thead>
         <tr>
@@ -68,5 +71,18 @@
     }
     .create-button:hover {
         background-color: #218838;
+    }
+    
+    .logout-button {
+        display: inline-block;
+        background-color: #dc3545;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 4px;
+        margin-left: 10px;
+    }
+    .logout-button:hover {
+        background-color: #c82333;
     }
 </style>
